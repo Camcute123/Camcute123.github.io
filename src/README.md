@@ -41,7 +41,7 @@ projects:
 footer: customize your footer text
 ---
 
-This is a blog home page demo.
+This is a
 
 To use this layout, you should set both `layout: BlogHome` and `home: true` in the page front matter.
 

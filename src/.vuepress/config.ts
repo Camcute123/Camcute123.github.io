@@ -18,6 +18,16 @@ export default defineUserConfig({
   },
 
   theme,
+  head: [
+    [
+      "link", {
+        rel: "shortcut icon",
+        // href: "/favicon.ico",
+        href: "/images/Logo.jpeg",
+      }
+    ],
+
+  ],
 
   // Enable it with pwa
   // shouldPrefetch: false,

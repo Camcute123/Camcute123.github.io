@@ -9,11 +9,12 @@ export const enNavbar = navbar([
   },
 
   {
-    text:"Python notebook",
+    text:"content",
     icon:"C",
     children:[
       "/",
       {text:"Report", icon:"home", link:"#"},
+      {text:"Python notebook", icon:"home", link:"#"}
       {
         text:"sharing",
         icon:"home",

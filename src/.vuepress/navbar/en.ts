@@ -14,13 +14,14 @@ export const enNavbar = navbar([
     children:[
       "/",
       {text:"Report", icon:"home", link:"#"},
-      {text:"Python notebook", icon:"home", link:"#"}
+      {text:"Python notebook", icon:"home", link:"#"},
       {
         text:"sharing",
         icon:"home",
         children:[
           {text:"Movie review", icon:"home", link:"#"},
-          {text:"article appreciation", icon:"home", link:"#"}
+          {text:"article appreciation", icon:"home", link:"#"},
+          {text:"photography", icon:"home", link:"#"},
         ]
       }
     ]

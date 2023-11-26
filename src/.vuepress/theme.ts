@@ -13,7 +13,8 @@ export default hopeTheme({
     url: "https://vervevividness.com",
   },
 
-  iconAssets: "fontawesome-with-brands",
+  iconAssets: "//at.alicdn.com/t/c/font_4346328_x9o9eopct.css",
+  iconPrefix: "iconfont icon-",
 
   logo: "/images/Logo.jpeg",
 

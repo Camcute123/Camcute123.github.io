@@ -11,8 +11,8 @@ export const zhNavbar = navbar([
         text:"学习笔记",
         icon:"home",
         children:[
-          {text:"实验报告", icon:"home", link:"#"},
-          {text:"Python笔记", icon:"home", link:"#"},
+          {text:"实验报告", icon:"baogao1", link:"#"},
+          {text:"Python笔记", icon:"a-bijibenbiji", link:"#"},
         ]
       },
 
@@ -20,9 +20,9 @@ export const zhNavbar = navbar([
         text:"日常分享",
         icon:"home",
         children:[
-          {text:"电影观感", icon:"home", link:"#"},
-          {text:"文章赏析", icon:"home", link:"#"},
-          {text:"摄影作品", icon:"home", link:"#"},
+          {text:"电影观感", icon:"yuedu1", link:"#"},
+          {text:"文章赏析", icon:"yuedu1", link:"#"},
+          {text:"摄影作品", icon:"-dianyingpiao-", link:"#"},
         ]
       }
     ]

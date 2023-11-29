@@ -127,15 +127,10 @@ export default hopeTheme({
         '/Waline/emoji/bmoji_heartbeat.png',
         '/Waline/emoji/bmoji_give_love.png',
         '/Waline/emoji/bmoji_hard.png',
-        // '/Waline/tieba/tieba_sleep.png',
         '/Waline/emoji/bmoji_emm.png',
         '/Waline/emoji/bmoji_jiong.png',
         '/Waline/emoji/bmoji_heihei.png',
-        // '/Waline/tieba/tieba_coffee.png',
-        // '/Waline/tieba/tieba_cute.png',
-        // '/Waline/qq/qq_4.gif',
-        // '/Waline/qq/qq_alpaca.gif',
-        // '/Waline/qq/qq_bear2.gif',
+
       ],
       comment: true, // 评论数统计
       pageview: true, // 浏览量统计

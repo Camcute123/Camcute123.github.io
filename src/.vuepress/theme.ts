@@ -129,7 +129,7 @@ export default hopeTheme({
         '/Waline/emoji/bmoji_hard.png',
         '/Waline/emoji/bmoji_emm.png',
         '/Waline/emoji/bmoji_jiong.png',
-        '/Waline/emoji/bmoji_heihei.png',
+        '/Waline/emoji/bmoji_heiehi.png',
 
       ],
       comment: true, // 评论数统计

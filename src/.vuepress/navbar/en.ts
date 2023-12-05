@@ -5,7 +5,7 @@ export const enNavbar = navbar([
 
   {
     text:"content",
-    icon:"C",
+    icon:"Home-copy",
     children:[
       "/",
       {text:"Report", icon:"baogao1", link:"#"},

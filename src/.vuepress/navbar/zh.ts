@@ -5,7 +5,7 @@ export const zhNavbar = navbar([
 
   {
     text:"内容",
-    icon:"C",
+    icon:"Home-copy",
     children:[
       {
         text:"学习笔记",

@@ -152,7 +152,7 @@ export default hopeTheme({
         "SiteInfo",
         "StackBlitz",
         "Share",
-        "VidStack",
+        // "VidStack",
         // "YouTube",
         // "Replit",
         // "ArtPlayer",

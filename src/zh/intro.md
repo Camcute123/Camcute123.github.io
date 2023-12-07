@@ -33,10 +33,5 @@ toc: true
 
 那就先说这么多吧，等想到了再补上！
 
+<PDF url="/pdf/IEP-Report.pdf" />
 
-
-::: details
-
-111
-
-:::

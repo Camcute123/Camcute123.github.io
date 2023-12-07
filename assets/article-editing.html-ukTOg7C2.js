@@ -1,0 +1,1 @@
+import{_ as e}from"./plugin-vue_export-helper-x3n3nnut.js";import{o as t,c,d as o}from"./app-BD19kKu_.js";const n={},r=o("p",null,"111111",-1),_=[r];function s(i,a){return t(),c("div",null,_)}const f=e(n,[["render",s],["__file","article-editing.html.vue"]]);export{f as default};

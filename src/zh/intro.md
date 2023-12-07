@@ -35,12 +35,8 @@ toc: true
 
 
 
-![image-20231207073951070](./intro.assets/image-20231207073951070.png)
+::: details
 
-> qqq
->
-> q
->
-> q
+111
 
-[hello](https://us06web.zoom.us/j/81100533017)
+:::

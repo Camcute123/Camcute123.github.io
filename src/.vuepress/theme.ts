@@ -109,14 +109,16 @@ export default hopeTheme({
 
   encrypt: {
     config: {
+      
       "/zh/New-article/article-editing.html":["123456"],
       "/demo/encrypt.html": ["1234"],
       "/zh/demo/encrypt.html": ["1234"],
-      "/zh/New-article/":["1234"]
+      "/zh/New-article/":["1234"],
     },
   },
 
   plugins: {
+    
     blog: true,
 
     // install @waline/client before enabling it

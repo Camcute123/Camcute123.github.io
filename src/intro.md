@@ -1,6 +1,5 @@
 ---
 title: About me
-icon: yongyan
 date: 2023-12-05 08:30:10
 author: Cindy
 isOriginal: true

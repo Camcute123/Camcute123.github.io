@@ -137,6 +137,27 @@ export default hopeTheme({
       copyright: false,
       dark: "auto",
     },
+    components: {
+      
+      components: [
+        "VPBanner",
+        "VPCard",
+        // "ArtPlayer",
+        // "AudioPlayer",
+        // "Badge",
+        "BiliBili",
+        // "FontIcon",
+        // "CodePen",
+        "PDF",
+        "SiteInfo",
+        "StackBlitz",
+        "Share",
+        "VidStack",
+        // "YouTube",
+        // "Replit",
+        // "ArtPlayer",
+      ],
+    },
 
     // all features are enabled for demo, only preserve features you need here
     mdEnhance: {

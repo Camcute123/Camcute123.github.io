@@ -119,25 +119,6 @@ Adding one more line : “command + Enter”
 
 ## 11. Custom container
 
-:::tip
-
-:::
-
-:::details 
-:::
-
-:::warning
-
-:::
-
-:::info (info-self defined headline)
-
-:::
-
-:::note
-
-:::
-
 ::: info
 
 信息容器。

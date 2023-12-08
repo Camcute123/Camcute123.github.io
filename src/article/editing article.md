@@ -71,7 +71,7 @@ print('Nice to meet you')
 
 ## 5. To do list
 
-- [ ] \- [x]    “a minus sign + a spacing + square bracket”
+- [x] “a minus sign + a spacing + square bracket”
 
 
 

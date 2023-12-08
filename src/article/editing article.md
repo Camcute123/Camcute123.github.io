@@ -117,15 +117,22 @@ Adding one more line : “command + Enter”
 
 ## 11. Custom container
 
-:::md-demo
-
 :::tip
 
-:::details (hello)
+:::
+
+:::details 
+:::
 
 :::warning
 
-::::exclamation:
+:::
+
+:::info (info-self defined headline)
+
+:::
+
+:::note
 
 :::
 

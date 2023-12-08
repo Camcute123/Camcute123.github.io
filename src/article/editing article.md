@@ -125,7 +125,7 @@ Adding one more line : “command + Enter”
 
 :::
 
-:::infor
+:::warning
 
 :::
 

@@ -38,7 +38,7 @@ Here are some tips on how to write articles in Typora :eyes:
 
 ## 2. Inserting a picture
 
-![image-20231208133147807](./editing article.assets/image-20231208133147807.png)
+![image-20231208231440424](./article-editting.assets/image-20231208231440424.png)
 
 Screenshot or copy the picture, the use control+V to paste it inside.
 

@@ -186,6 +186,9 @@ export default hopeTheme({
       // install flowchart.ts before enabling it
       // flowchart: true,
 
+      tasklist: true,
+
+
       // gfm requires mathjax-full to provide tex support
       // gfm: true,
 
@@ -230,6 +233,7 @@ export default hopeTheme({
       sup: true,
       tabs: true,
       vPre: true,
+   
 
       // install @vue/repl before enabling it
       // vuePlayground: true,

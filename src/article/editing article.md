@@ -121,19 +121,11 @@ Adding one more line : “command + Enter”
 
 :::tip
 
-:::
-
 :::details (hello)
-
-:::
 
 :::warning
 
-:::
-
-:::exclamation:
-
-:::
+::::exclamation:
 
 :::
 

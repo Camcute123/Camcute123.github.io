@@ -121,7 +121,7 @@ Adding one more line : “command + Enter”
 
 :::
 
-:::details
+:::details (hello)
 
 :::
 

@@ -34,6 +34,8 @@ Here are some tips on how to write articles in Typora :eyes:
 
 ###### Headline6
 
+::::md-demo
+
 
 
 ## 2. Inserting a picture
@@ -99,21 +101,21 @@ print('Nice to meet you')
 
 ## 9. Inserting a form
 
-:::md-demo
-
 | The name of candidates | The grade of interview | regected/admitted |
 | ---------------------- | ---------------------- | ----------------- |
 |                        |                        |                   |
 
 Adding one more line : “command + Enter” 
 
-:::
+
 
 
 
 ## 10. Inserting a PDF
 
 <PDF url="//theme-hope-assets.vuejs.press/files/sample.pdf" />
+
+“put it under .vuepress => public => the name of folder”
 
 
 
@@ -230,7 +232,7 @@ const a = 1;
 ::: danger self-defined danger
 :::
 
-
+::::
 
 
 

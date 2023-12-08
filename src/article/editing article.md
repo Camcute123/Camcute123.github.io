@@ -167,7 +167,7 @@ const a = 1;
 
 ::: note title
 
-a note container with acodes and links.
+a note container with codes and links.
 
 ```js
 const a = 1;
@@ -177,7 +177,7 @@ const a = 1;
 
 ::: tip title
 
-a tip container with acodes and link
+a tip container with codes and link
 
 ```js
 const a = 1;
@@ -187,7 +187,7 @@ const a = 1;
 
 ::: warning title
 
-a warning container with acodes and link
+a warning container with codes and link
 
 ```js
 const a = 1;
@@ -197,7 +197,7 @@ const a = 1;
 
 ::: danger title
 
-a danger container with acodes and link
+a danger container with codes and link
 
 ```js
 const a = 1;
@@ -207,7 +207,7 @@ const a = 1;
 
 ::: details title
 
-a details container with acodes and link
+a details container with codes and link
 
 ```js
 const a = 1;

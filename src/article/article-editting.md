@@ -34,7 +34,7 @@ Here are some tips on how to write articles in Typora :eyes:
 
 ###### Headline6
 
-::::md-demo
+
 
 
 
@@ -106,6 +106,8 @@ print('Nice to meet you')
 |                        |                        |                   |
 
 Adding one more line : “command + Enter” 
+
+“paragraph => form”
 
 
 
@@ -232,7 +234,7 @@ const a = 1;
 ::: danger self-defined danger
 :::
 
-::::
+
 
 
 

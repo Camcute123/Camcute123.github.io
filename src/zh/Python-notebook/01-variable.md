@@ -311,77 +311,95 @@ print("Jaden", Jaden)
 
     1. 在 Python 中，变量名可以以数字开始。
         - [ ] 对
-        - [ ] 错
+        - [x] 错
 
     2. 在 Python 中，以下哪个变量名是有效的？
         - [ ] 2myVar
-        - [ ] myVar2
+        - [x] myVar2
         - [ ] my-var
         - [ ] my var
 
     3. 在Python中，变量名区分大小写。
-        - [ ] 对
+        - [x] 对
         - [ ] 错
 
     4. 在Python中，`my_var` 和 `myVar` 是同一个变量。
         - [ ] 对
-        - [ ] 错
+        - [x] 错
 
     5. 变量名可以是 Python 中的关键字。
         - [ ] 对
-        - [ ] 错
+        - [x] 错
 
     6. `None` 是Python中的特殊类型，表示没有值或空值。
-        - [ ] 对
+        
+        - [x] 对
         - [ ] 错
-
+        
     7. 在Python中，以下哪个是有效的变量赋值？
-        - [ ] 123abc = "hello"
+        - [x] 123abc = "hello"
         - [ ] for = "world"
         - [ ] _hidden = "secret"
         - [ ] import = 123
-
+    
     8. 在Python中，一个变量可以同时被赋予多个值。
         - [ ] 对
-        - [ ] 错
-
+        - [x] 错
+    
     9. 在Python中，以下哪个是多变量赋值？
-        - [ ] a, b, c = 1, 2, 3
+        - [x] a, b, c = 1, 2, 3
         - [ ] a = 1, b = 2, c = 3
         - [ ] a; b; c = 1; 2; 3
         - [ ] a = 1; b = 2; c = 3;
-
+    
     10. 变量在使用之前必须被赋值。
-        - [ ] 对
+        - [x] 对
         - [ ] 错
-
+    
     11. Python中变量的类型是静态的，一旦赋值就不能改变。
         - [ ] 对
-        - [ ] 错
-
+        - [x] 错
+    
     12. 在Python中，以下哪个表示全局变量？
-        - [ ] var = "hello"
+        - [x] var = "hello"
         - [ ] global var
         - [ ] var(global)
         - [ ] def var():
-
+    
     13. 以下哪个表示删除变量？
         - [ ] delete x
-        - [ ] del x
+        
+        - [x] del x
+        
         - [ ] remove x
+        
         - [ ] destroy x
-
+        
+            ```python
+            my_variable = "Hello, World!"
+            print(my_variable)
+            
+            # 删除变量
+            del my_variable
+            
+            # 尝试访问已删除的变量将引发 NameError
+            # print(my_variable)
+            
+            ```
+        
+            
+        
     14. `x = 5` 之后 `y = x`，现在改变 `y` 的值，`x` 的值也会改变。
         - [ ] 对
-        - [ ] 错
-
+        - [x] 错
+    
     15. `x = [1, 2, 3]` 之后 `y = x`，现在改变 `y` 的列表内容，`x` 的内容也会改变。
         - [ ] 对
-        - [ ] 错
-
+        - [x] 错
+    
     16. 在Python中，变量只能存储基本数据类型的值，如整数或字符串。
         - [ ] 对
-        - [ ] 错
-
+        - [x] 错
+    
     
 

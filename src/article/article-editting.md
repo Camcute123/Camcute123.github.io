@@ -36,7 +36,7 @@ Here are some tips on how to write articles in Typora :eyes:
 
 
 
-
+:::md-demo
 
 ## 2. Inserting a picture
 
@@ -44,7 +44,11 @@ Here are some tips on how to write articles in Typora :eyes:
 
 Screenshot or copy the picture, the use control+V to paste it inside.
 
+:::
 
+
+
+:::md-demo
 
 ## 3. Inserting codes
 
@@ -54,12 +58,16 @@ enter the button left next to [1] three times, and enter the type of coding lang
 "Hello world!"
 ```
 
+:::
 
+
+
+:::md-demo
 
 ## 4.  Grouping of coding block
 
 ````python
-:::code-tabs
+
 @tab code1
 ```python
 print('welcome to my website')
@@ -68,28 +76,43 @@ print('welcome to my website')
 ```python
 print('Nice to meet you')
 ``` 
-:::
 ````
 
+:::
 
+
+
+:::md-demo
 
 ## 5. To do list
 
 - [x] “a minus sign + a spacing + square bracket”
 
+:::
 
+
+
+:::md-demo
 
 ## 6. unordered list
 
 - “ a minus sign + a spacing”
 
+:::
 
+
+
+:::md-demo
 
 ## 7. Ordered list
 
 1. “number + . + a spacing”
 
+:::
 
+
+
+:::md-demo
 
 ## 8. Link
 
@@ -97,7 +120,11 @@ print('Nice to meet you')
 
 “a square bracket + a bracket”
 
+:::
 
+
+
+:::md-demo
 
 ## 9. Inserting a form
 
@@ -109,9 +136,11 @@ Adding one more line : “command + Enter”
 
 “paragraph => form”
 
+:::
 
 
 
+:::md-demo
 
 ## 10. Inserting a PDF
 
@@ -119,7 +148,11 @@ Adding one more line : “command + Enter”
 
 “put it under .vuepress => public => the name of folder”
 
+:::
 
+
+
+::::md-demo
 
 ## 11. Custom container
 
@@ -233,6 +266,8 @@ const a = 1;
 
 ::: danger self-defined danger
 :::
+
+::::
 
 
 

@@ -241,4 +241,107 @@ d type is :>>> <class 'dict'>
 
 
 
-​    
+## 7.集合「set」
+
+### 7.1 代码示例
+
+``` python
+set1 = {1, 2, "Cindy", 1.2, "hello", (1, 2, 3), False}
+t = type(set1)
+print(set1)
+print("set1 type is :>>>", type(set1))
+print("直接检测数据类型，并输出:>>>", t)
+
+#output
+{False, 1, 2, 1.2, 'hello', (1, 2, 3), 'Cindy'}
+set1 type is :>>> <class 'set'>
+直接检测数据类型，并输出:>>> <class 'set'>
+```
+
+### 7.2 集合的特性
+
+1. 无序性：集合是没有顺序的，也就是：没有下标；
+
+    ``` python
+    set1 = {1, 2, "Cindy", 1.2, "hello", (1, 2, 3), False}
+    print(set1)
+    
+    #output
+    {False, 1, 2, 1.2, 'hello', (1, 2, 3), 'Cindy'}
+    
+    ```
+
+    
+
+  ::: warning
+
+  如果你运行集合很多次，或者其中某一次，集合顺序没有改变，我们也不能说集合是有序的。
+
+  Why？你掷骰子，500次都是 6 点，你能说掷骰子是确定性事件吗？——显然是不行的🙅。
+
+  :::  
+
+2. 确定性：
+
+    1. 集合的每一个值都是确定的；「也就是需要不可变的数据类型」
+
+    2. 比如：数字型，布尔，元组，字符串
+
+    3. 举个例子🌰：列表可变，所以不行🙅
+
+        
+
+::: code-tabs
+
+@不可变测试
+
+``` python
+set1 = {1, 2, "Cindy", 1.2, "hello", (1, 2, 3), False}
+print(set1)
+
+#output
+{False, 1, 2, 1.2, 'hello', (1, 2, 3), 'Cindy'}
+```
+
+@tab 可变测试
+
+``` python
+set1 = {1, 2, [1, 2, 3]}
+print(set1)
+
+#outut
+Traceback (most recent call last):
+  File "/Users/wangruoyihan/PycharmProjects/pythonProject/python 11.12.py", line 63, in <module>
+    set1 = {1, 2, [1, 2, 3]}
+           ^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'list'
+
+```
+
+:::
+
+3. 互异性：出现重复的不会报错，会自动去掉重复的；
+
+``` python
+set1 = {1, 2, 1, 1, 2, 1}
+print(set1)
+
+#{1,2}
+```
+
+4.可变性：可以对集合添加，删除数据，但是不能修改输出。「注意⚠️：删除是无法制定下标删除的元素」
+
+
+
+## 8.布尔型「bool」
+
+```python
+condition = True
+print(condition)
+print(type(condition))
+
+#output
+True
+<class 'bool'>
+```
+

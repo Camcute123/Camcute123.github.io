@@ -28,7 +28,7 @@ Here's the translated markdown:
 
 ## 1. Characteristics of Numeric Types
 
-![image-20231212075658808](./03-Numeric-type.assets/image-20231212075658808.png)
+![image-20231214105412205](./03-Numeric-type.assets/image-20231214105412205.png)
 
 ```python
 In [3]: 1 + 1

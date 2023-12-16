@@ -4,7 +4,7 @@ export const enNavbar = navbar([
   "/" , //主页
 
   {
-    text:"Report",
+    text:"study",
     icon:"baogao1",
     children:[
       "/",

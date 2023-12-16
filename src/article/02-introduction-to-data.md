@@ -150,7 +150,7 @@ Detecting data type directly and outputting: >>> <class 'list'>
 
 ::: details Data Types Python Possesses "Below includes only basic types"
 
-![image-20231209234829891](./02-introduction-to-data-types.assets/image-20231209234829891.png)
+![image-20231216151405069](./02-introduction-to-data.assets/image-20231216151405069.png)
 
 :::
 

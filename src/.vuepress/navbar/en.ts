@@ -12,6 +12,14 @@ export const enNavbar = navbar([
       {text:"structural", icon:"a-bijibenbiji", link:"#"},
 ]},
 
+  { text:"python",
+  icon:"home",
+  children:[
+        {text:"notebook", icon:"dianyingpiao", link:"#"},
+        {text:"exercise", icon:"a-bijibenbiji", link:"#"},
+        {text:"project", icon:"sheying", link:"#"},
+  ]},
+
   { text:"sharing",
   icon:"home",
   children:[

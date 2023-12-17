@@ -471,7 +471,284 @@ print(new_string)
 1
 ```
 
+### 5.9 .index()
+
+寻找目标字符或单词在特定字符串，第一次出现的下标。如果是查找单词，那么`index（）`返回目标单词的第一个字符的下标
+
+如果查询的单词不存在，则报错
+
+```python
+string = "bornforthis"
+new_string = string.index("orn")
+print(new_string)
+#output
+1
+
+string = "bornforthis"
+new_string_1 = string.index("q")
+print(new_string_1)
+#output
+Traceback (most recent call last):
+  File "/Users/wangruoyihan/PycharmProjects/pythonProject/python 11.12.py", line 95, in <module>
+    new_string_1 = string.index("q")
+                   ^^^^^^^^^^^^^^^^^
+ValueError: substring not found
+```
+
+### 5.10 .isdigit()
+
+判断字符串是不是纯数字字符串，字符串中只要有一个字符是非数字，则返回false。
+
+```python
+string = "12345678"
+result = string.isdigit()
+print(result)
+
+#output
+True
+
+string = "12345678a"
+result = string.isdigit()
+print(result)
+#output
+false
+```
+
+### 5.11 .isalpha()
+
+判断字符串是不是纯字母字符串，字符串中只要有一个字符是非字母字，则返回false。
+
+```python
+string = "Verveviviness"
+result = string.isalpha()
+print(result)
+
+#output
+True
+
+string = "Verve vividness"
+result = string.isalpha()
+print(result)
+#output
+false
+```
+
+### 5.12 .isalnum()
+
+判断字符串是不是纯数字或者纯字母，纯数字字母字符串，字符串中但凡出现非数字字母元素，则返回False
+
+```python
+string = "Verveviviness"
+result = string.isalnum()
+print(result)
+
+#output
+True
+
+string = "123456"
+result = string.isalnum()
+print(result)
+#output
+True
+
+string = "Verveviviness1234"
+result = string.isalnum()
+print(result)
+
+#output
+True
+```
+
+### 5.13 .isupper
+
+判断字符串是否全部大写，字符串中只要有一个字符是非大写，则返回false。
+
+```python
+string = "HELLO"
+boolean = string.isupper()
+print(boolean)
+#output
+True
+
+string = "HELLOa"
+boolean = string.isupper()
+print(boolean)
+#output
+False
+
+string = "HELLO$$"
+boolean = string.isupper()
+print(boolean)
+#output
+True
+```
+
+### 5.14 .islower
+
+判断字符串是否全部小写，字符串中只要有一个字符是非小写，则返回false。
+
+```python
+string = "hello"
+boolean = string.islower()
+print(boolean)
+#output
+True
+
+string = "Helloa"
+boolean = string.islower()
+print(boolean)
+#output
+False
+
+string = "hello$$"
+boolean = string.islower()
+print(boolean)
+#output
+True
+```
+
+### 5.15 .isspace
+
+判断字符串是否为纯空格，多少个空格都可以。纯空格返回True，否则返回False
+
+```python
+string = "     "
+boolean = string.isspace()
+print(boolean)
+#output
+True
+
+string = " "
+boolean = string.isspace()
+print(boolean)
+#output
+True
+
+string = "hello$$"
+boolean = string.isspace()
+print(boolean)
+#output
+False
+```
+
+### 5.16 .strip()
+
+默认去掉目标字符串的前后空白字符，如果指定参数，则去掉指定字符。
+
+```python
+string = "  Vervevividness  "
+strip_string = string.strip()
+print("原本字符串", string)
+print("去掉空白后的", strip_string)
+#output
+原本字符串   Vervevividness  
+去掉空白后的 Vervevividness
+
+string = " --Vervevividness--  "
+strip_string = string.strip("- ")# 如果只打-，只会去除连续的减号
+print("原本字符串", string)
+print("去掉-和空白后的", strip_string) #没有先后顺序
+#output
+原本字符串  --Vervevividness--  
+去掉-和空白后的 Vervevividness
+```
+
+### 5.17 .lstrip()
+
+默认去掉字符串左边的空白字符，如果指定参数，则去掉左边的指定字符。
+
+```python
+string = "   bornforthis   "
+lstrip_string = string.lstrip()
+print("原本的字符串:", string)
+print("去掉左边空白字符后:", lstrip_string)
+
+# ---output---
+原本的字符串:    bornforthis   
+去掉左边空白字符后: bornforthis   
 
 
+string = "----bornforthis----"
+lstrip_string = string.lstrip('-')
+print("原本的字符串:", string)
+print("去掉左边 '-' 后:", lstrip_string)
 
+
+# ---output---
+原本的字符串: ----bornforthis----
+去掉左边 '-' 后: bornforthis----
+
+string = "-- --bornforthis----"
+lstrip_string = string.lstrip('- ')  # 不分先后顺序
+print("原本的字符串:", string)
+print("去掉左边 '- ' 后:", lstrip_string)
+
+# ---output---
+原本的字符串: -- --bornforthis----
+去掉左边 '- ' 后: bornforthis----
+```
+
+### 5.18 .Rsrip()
+
+默认去掉字符串右边的空白字符，如果指定参数，则去掉右边的指定字符。
+
+```python
+string = "   bornforthis   "
+rstrip_string = string.rstrip()
+print("原本的字符串:", string)
+print("去掉右边空白字符后:", rstrip_string)
+
+# ---output---
+原本的字符串:    bornforthis   
+去掉右边空白字符后:    bornforthis
+
+
+string = "----bornforthis----"
+rstrip_string = string.rstrip('-')
+print("原本的字符串:", string)
+print("去掉右边 '-' 后:", rstrip_string)
+
+# ---output---
+原本的字符串: ----bornforthis----
+去掉右边 '-' 后: ----bornforthis
+
+
+string = "----bornforthis-- --"
+rstrip_string = string.rstrip('- ')  # 不分先后顺序
+print("原本的字符串:", string)
+print("去掉右边 '- ' 后:", rstrip_string)
+
+# ---output---
+原本的字符串: ----bornforthis-- --
+去掉右边 '- ' 后: ----bornforthis
+```
+
+### 5.19 .replce()
+
+```python
+string = "  Vervevividness  "
+replace_string = string.replace(' ', '@', 1)
+print("原本的： ", string)
+print("改后的： ", replace_string)
+#output
+原本的：    Vervevividness  
+改后的：  @ Vervevividness  
+
+string = "  Vervevividness  "
+replace_string = string.replace(' ', '@',)
+print("原本的： ", string)
+print("改后的： ", replace_string)
+#output
+原本的：    Vervevividness  
+改后的：  @@Vervevividness@@
+
+string = "  11--Vervevividness--11  "
+replace_string = string.replace('1-', 'ai-',)
+print("原本的： ", string)
+print("改后的： ", replace_string)
+#output
+原本的：    11--Vervevividness--11  
+改后的：    1ai--Vervevividness--11  
+
+```
 

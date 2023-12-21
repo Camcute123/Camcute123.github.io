@@ -752,3 +752,301 @@ print("改后的： ", replace_string)
 
 ```
 
+### 5.20 .split()
+
+`.split(sep, maxsplit)`以特定字符进行分割，默认空格分割。如果传入参数「sep」，则以参数进行分割。返回分割后的列表。maxsplit用于控制分割几次。
+
+```python
+string = "hello bornforthis ok"
+string_split = string.split()
+print("原本的字符串: ", string)
+print("分割后的: ", string_split)
+
+string = "hello-bornforthis-ok"
+string_split = string.split('-')
+print("原本的字符串: ", string)
+print("分割后的: ", string_split)
+
+string = "hello-bornforthis-ok"
+string_split = string.split(sep='-', maxsplit=1)
+print("原本的字符串: ", string)
+print("分割后的: ", string_split)
+
+#output
+原本的字符串:  hello bornforthis ok
+分割后的:  ['hello', 'bornforthis', 'ok']
+原本的字符串:  hello-bornforthis-ok
+分割后的:  ['hello', 'bornforthis', 'ok']
+原本的字符串:  hello-bornforthis-ok
+分割后的:  ['hello', 'bornforthis-ok']
+```
+
+### 5.21 rsplit
+
+`.rsplit(sep, maxsplit)` 从字符串右边进行分割，也可以传入参数「sep」，进行指定分割。返回分割后的列表。maxsplit 指定分割次数。
+
+```python
+string = "hello bornforthis ok"
+string_split = string.rsplit()
+print("原本的字符串: ", string)
+print("分割后的: ", string_split)
+
+string = "hello-bornforthis-ok"
+string_split = string.rsplit('-')
+print("原本的字符串: ", string)
+print("分割后的: ", string_split)
+
+string = "hello-bornforthis-ok"
+string_split = string.rsplit('-', 1)
+print("原本的字符串: ", string)
+print("分割后的: ", string_split)
+
+#output
+原本的字符串:  hello bornforthis ok
+分割后的:  ['hello', 'bornforthis', 'ok']
+原本的字符串:  hello-bornforthis-ok
+分割后的:  ['hello', 'bornforthis', 'ok']
+原本的字符串:  hello-bornforthis-ok
+分割后的:  ['hello-bornforthis', 'ok']
+```
+
+### 5.22 join()
+
+以特定字符使字符串间隔。
+
+```python
+string = "Vervevividness"
+join_string = '-'.join(string)
+print("原本的字符串:" ,string)
+print("添加之后的:", join_string)
+#output
+原本的字符串: Vervevividness
+添加之后的: V-e-r-v-e-v-i-v-i-d-n-e-s-s
+```
+
+## 6. 字符串格式化
+
+```python
+string = 'Hi bornforthis, welcome to here'
+print(string)
+```
+
+- 所存在的问题：需要换一个人名或者地区，就需要重新创建一个全新的字符串。
+- 我们更希望有类似模版，让我们不同的人名、地面填写进去。而不是每个人都从头创建一个新字符串。
+
+当然，这个时候有可能会想到使用字符串的加法，但字符串加法存在问题。
+
+```python
+str1 = "Hi "
+str2 = "welcome to here"
+n = str1 + "Cindy, " + str2
+print(n)
+#output
+
+Hi Cindy, welcome to here
+```
+
+由上面的代码可知，虽然实现了。但是很繁琐，如果更复杂的字符就不合适了。
+
+另一个问题是，在python中不同的数据类型不能直接相加，除非强制转化为字符串：
+
+```python
+string = "Money is: " + 190
+print(string)
+#output
+Traceback (most recent call last):
+  File "/Users/wangruoyihan/PycharmProjects/pythonProject/python 11.12.py", line 98, in <module>
+    string = "Money is: " + 190
+             ~~~~~~~~~~~~~^~~~~
+TypeError: can only concatenate str (not "int") to str
+
+string = "Money is: " +str(190)
+print(string)
+```
+
+—format就应运而生了
+
+### 6.1 format()
+
+1. 单个花括号
+
+```python
+string = "Hello {}, Welcome to Vervevividness.".format("Sam")
+print(string)
+
+template_string = "Hi {}, Welcome to Vervevividness"
+print(template_string.format("Cindy"))
+
+new_string = template_string.format("guys")
+print(new_string)
+
+#output
+Hello Sam, Welcome to Vervevividness.
+Hi Cindy, Welcome to Vervevividness
+Hi guys, Welcome to Vervevividness
+```
+
+2. 多个花括号，按照顺序填充
+
+```python
+string = "Hello {}, Welcome to {}.".format("Sam", "Vervevividness")
+print(string)
+
+template_string = "Hi {}, Welcome to {}"
+print(template_string.format("Cindy", "Shanghai"))
+
+new_string = template_string.format("guys", "here")
+print(new_string)
+
+#output
+Hello Sam, Welcome to Vervevividness.
+Hi Cindy, Welcome to Shanghai
+Hi guys, Welcome to here
+```
+
+3. 多个花括号指定位置
+
+```python
+string = "Hello {1}, Welcome to {0}.".format("Vervevividness", "Sam")
+print(string)
+
+template_string = "Hi {1}, Welcome to {0}"
+print(template_string.format("Shanghai", "Cindy"))
+
+new_string = template_string.format("here", "guys")
+print(new_string)
+
+#output
+Hello Sam, Welcome to Vervevividness.
+Hi Cindy, Welcome to Shanghai
+Hi guys, Welcome to here
+```
+
+4. 参数指定
+
+```python
+string = "Hello {name}, Welcome to {region}.".format(name = "Sam", region = "Vervevividness")
+print(string)
+
+template_string = "Hi {name}, Welcome to {region}"
+print(template_string.format(name = "Cindy", region = "Shanghai"))
+
+new_string = template_string.format(name = "guys", region = "here")
+print(new_string)
+
+#output
+Hello Sam, Welcome to Vervevividness.
+Hi Cindy, Welcome to Shanghai
+Hi guys, Welcome to here
+```
+
+5. 保留指定小数位
+
+```python
+string = "Money is {:.3f}.".format(190)
+print(string)
+
+#output
+Money is 190.000.
+```
+
+### 6.2 f
+
+1. 直接读取变量
+
+```python
+name = "Cindy"
+region = "Vervevividness"
+string = f"Hi {name}, welcome to {region}."
+print(string)
+
+#output
+Hi Cindy, welcome to Vervevividness.
+```
+
+2. 保留小数位
+
+```python
+money = 200
+string = f"Money is {money:.3f}."
+print(string)
+
+#output
+Money is 200.000.
+```
+
+### %6.3 格式化
+
+- `%d`:整数
+- `%s:`字符串
+- `%f:`浮点数
+
+1. 单个位置传入
+
+```python
+string = "Money is %d"
+new_s = string % 13
+print(new_s)
+print(string % 19)
+string = "Money is %d" %19
+print(string)
+
+#output
+Money is 13
+Money is 19
+Money is 19
+```
+
+2. 多个位置传入
+
+```python
+string = "Money is %d %s"
+new_s = string % (13, "hello")
+print(new_s)
+print(string % (19, "HI"))
+string = "Money is %d %s" %(19, "haha")
+print(string)
+
+#output
+Money is 13 hello
+Money is 19 HI
+Money is 19 haha
+```
+
+```python
+string = "Money is %d %s"
+new_s = string % (13, 'make a million')
+print(new_s)
+print(string % (888, 'sudden wealth'))
+string = "Money is %d %s" % (190, 'super rich')
+print(string)
+
+# ---output---
+Money is 13 make a million
+Money is 888 sudden wealth
+Money is 190 super rich
+```
+
+3. 保留小数位
+
+```python
+string = "Money is %.3f"
+new_s = string % 19
+print(new_s)
+print(string % 18)
+string = "Money is %.3f" % 180
+print(string)
+
+
+# ---output---
+Money is 19.000
+Money is 18.000
+Money is 180.000
+```
+
+### 6.4 f 和 format的优缺点
+
+format 和 % 都像模版，提前做好模版后面有需要试可以直接使用；
+
+而 f 就像在银行当中，柜员边问你边登记，不能提前做好模版。
+

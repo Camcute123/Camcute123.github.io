@@ -1050,3 +1050,270 @@ format 和 % 都像模版，提前做好模版后面有需要试可以直接使�
 
 而 f 就像在银行当中，柜员边问你边登记，不能提前做好模版。
 
+## 7. 字符串的不可变性
+
+字符串是不可变的，不可以改变字符串中的任何元素，如需改变字符串中的元素，则需要新建一个字符串。
+
+```python
+s = "Verevevividness"
+s[0] = "c"
+#output
+Traceback (most recent call last):
+  File "/Users/wangruoyihan/PycharmProjects/pythonProject/python 11.12.py", line 98, in <module>
+    s[0] = "c"
+    ~^^^
+TypeError: 'str' object does not support item assignment
+```
+
+除了使用replace还可以使用字符串拼接：
+
+```python
+s = "vervevividness"
+new = "a"+ s[1:]
+print(new)
+
+#output
+aervevividness
+```
+
+## 8. 字符串转义
+
+| 转义字符 | 含义                               | 例子                    |
+| -------- | ---------------------------------- | ----------------------- |
+| `\\`     | 反斜杠符号，为了在字符串中得到 `\` | `s = "bor\\nforthis"`   |
+| `\b`     | 退格，类似删除键                   | `s = "bornff\borthis"`  |
+| `\n`     | 换行                               | `s = "bornfor\nthis"`   |
+| `\t`     | 制表符                             | `s = "born\tfor\tthis"` |
+| `r`      | 取消转义「R和r」都可以             | `s = r"born\nforthis`   |
+
+示例代码：
+
+```python
+s = "Vervevividness"
+print(s)
+
+s= "Verve\nvividness"
+print(s)
+
+s= r"Verve\nvividness"
+print(s)
+
+s = "Verve\bvividness"
+print(s)
+
+s = "Verve\\nvividness"
+print(s)
+
+s = "a\tb\tc\td"
+print(s)
+
+#output
+Vervevividness
+Verve
+vividness
+Verve\nvividness
+Vervvividness
+Verve\nvividness
+a	b	c	d
+```
+
+## 9. 字符串的连接
+
+```python
+s1 = "Verve"
+s2 = "vividness"
+print(s1 +s2)
+print(s1, s2)
+
+#output
+Vervevividness
+Verve vividness
+
+s1 = '*-love-'
+print(s1 *10)
+*-love-*-love-*-love-*-love-*-love-*-love-*-love-*-love-*-love-*-love-
+```
+
+在末尾输出一个*
+
+```python
+s1 = '*-love-'
+print(s1 * 10 + s1[0])
+print(s1 * 10, end = '*')
+
+```
+
+## 10. 读取用户输入
+
+### 10.1 input()基本使用
+
+使用`input`获取用户输入
+
+```python
+user_input = input("please input your information: ")
+print(user_input)
+#output
+please input your indormation: hello
+hello
+```
+
+```python
+In [5]: type(input(':>>>'))
+:>>>(1, 2, 3, 4)
+Out[5]: str
+
+In [6]: type(input(':>>>'))
+:>>>"hello"   
+Out[6]: str
+
+In [7]: type(input(':>>>'))
+:>>>{ 'a' : 10, 'b' : 20 }
+Out[7]: str
+
+In [8]: type(input(':>>>'))
+:>>>True
+Out[8]: str
+
+```
+
+通过上面的代码示例，我们可以知道：通过 `input()` 获取用户输入，得到的数据类型都是**字符串**。
+
+得知 `input()` 的特点后，如何解决这个问题呢？——用户如何实现：直接输入原有的类型并得到原有的类型。
+
+```python
+In [9]: n = int(input(':>>>'))
+:>>>12
+
+In [10]: typr(n)
+
+In [11]: type(n)
+Out[11]: int
+
+In [12]: #存在一些问题
+
+In [13]: s = list(input('>>>'))
+>>>[1, 2, 3, 4]
+
+In [14]: print(s)
+['[', '1', ',', ' ', '2', ',', ' ', '3', ',', ' ', '4', ']']
+
+```
+
+- 适合：数字「整数，浮点数」，字符串，布尔形
+- 不适合：列表，元组，字典，集合
+
+### 10.3.3 
+
+```python
+In [15]: s = eval(input('>>>'))
+>>>12
+
+In [16]: type(s),s
+Out[16]: (int, 12)
+
+In [17]: s = eval(input('>>>'))
+>>>[1, 2, 3]
+
+In [18]: type(s),s
+Out[18]: (list, [1, 2, 3])
+
+In [19]: s = eval(input('>>>'))
+>>>{1, 2, 3}
+
+In [20]: type
+Out[20]: type
+
+In [21]: type(s),s
+Out[21]: (set, {1, 2, 3})
+
+In [23]: s = eval(input('>>>'))
+>>>{'a': 10, 'b' : 12}
+
+In [24]: type(s),s
+Out[24]: (dict, {'a': 10, 'b': 12})
+
+```
+
+2. `eval()`伴随的问题
+
+```python
+In [25]: s = eval(input('>>>'))
+>>>string
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+Cell In[25], line 1
+----> 1 s = eval(input('>>>'))
+
+File <string>:1
+
+NameError: name 'string' is not defined
+
+```
+
+稍微分析一下 `eval()` 的功能“大概”实现原因：
+
+- input 获取用户输入，得到字符串类型。
+
+```python
+In [44]: s = input(':>>>')
+:>>>[1, 2, 3]
+
+In [45]: s
+Out[45]: '[1, 2, 3]'
+```
+
+从上面的代码可以得知，eval 大概率实现的是去掉字符串左右两边的引号。「这个地方 eval 或许不是按我说的实现，但是为了让你们更好理解原理，先这样来。」
+
+所以，为什么会导致上面的报错呢？
+
+1. 获取用户输入：`s = eval(input(":>>>"))`
+2. 其中input会得到`‘string’`,而通过`eval`转换之后，就类似于`string`变量。但是在之前的代码中，并没有创建string这个变量。
+3. 解决方法：
+    1. 在获取用户输入之前提前创建一个叫做string的变量；「但不是我们想要的」
+    2. 输入时，有意加上单引号或双引号
+
+```python
+In [50]: string = 'hello this string'
+
+In [51]: s = eval(input(':>>>'))
+:>>>string
+
+In [52]: s
+Out[52]: 'hello this string'
+
+In [53]: num = 12
+
+In [54]: s = eval(input(':>>>'))
+:>>>num
+
+In [55]: type(s), s
+Out[55]: (int, 12)
+
+In [56]: s = eval(input(':>>>'))
+:>>>'string'
+
+In [57]: type(s), s
+Out[57]: (str, 'string')
+```
+
+3. `eval()`小技巧
+
+```python
+In [27]: eval(input('>>>'))
+>>>1 + 1
+Out[27]: 2
+
+In [28]: eval(input('>>>'))
+>>>2 - 1
+Out[28]: 1
+
+In [29]: eval(input('>>>'))
+>>>9 * 8
+Out[29]: 72
+
+In [30]: eval(input('>>>'))
+>>>9 / 3
+Out[30]: 3.0
+
+```
+

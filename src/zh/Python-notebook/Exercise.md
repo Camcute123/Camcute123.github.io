@@ -113,7 +113,7 @@ The total is 4 dollar(s) and 37 cent(s)
 ## Question 03 Penny Pinching
 
 ```python
-user_message = input("PLease enter the number of coins: ")
+print("PLease enter the number of coins: ")
 message_1 = input("Number of quarters: ")
 message_2 = input("Number of dimes: ")
 message_3 = input("Number of nickels: ")
@@ -152,7 +152,7 @@ Please enter your amount of dollars and cents, in two separate lines.
 ## Question 04 Mad as a Hatter, Thin as a Dime
 
 ```python
-user_message = input("Please enter tour amount of dollars nad cents, in teo separate lines")
+print("Please enter total amount of dollars and cents, in two separate lines")
 dollars = input("")
 cents = input("")
 total_cents = (100 * int(dollars) + int(cents))
@@ -269,6 +269,39 @@ Your loot box contains a rare item: False
 
 ```python
 random_num = random(1, 100)
+```
+
+```python
+import random
+random_num = random.randint(1, 100)
+user_message =int(input("What is your level? "))
+possibility = (5 - user_message + 1) * 20
+camparison = random_num <= possibility
+user_message_1 = print(f"Your loot box contains a rare item: {camparison}")
+
+#output
+What is your level? 2
+Your loot box contains a rare item: False
+```
+
+```python
+import random
+
+def gacha_result(level):
+    # 根据等级计算获得稀有物品的概率（每升一级，减少20%概率）
+    chance = 120 - 20 * level
+
+    # 随机生成一个1到100的数字，如果这个数字小于或等于计算出的概率，则返回True（表示获得稀有物品）
+    return random.randint(1, 100) <= chance
+
+# 获取用户输入的等级
+user_level = int(input("What is your level? "))
+
+# 调用函数判断是否获得稀有物品
+got_rare_item = gacha_result(user_level)
+
+# 输出结果
+print(f"Your loot box contains a rare item: {got_rare_item}")
 ```
 
 

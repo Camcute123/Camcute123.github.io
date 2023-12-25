@@ -1147,7 +1147,38 @@ print(s1 * 10, end = '*')
 
 ### 10.1 input()基本使用
 
-使用`input`获取用户输入
+使用`input()`获取用户输入
+
+```
+user_input = input()
+print(user_input)
+
+# ---output---
+bornforthis
+bornforthis
+
+```
+
+input() 使用输入提示
+
+但是上面的代码，有点小问题：在运行的时候并不能很直观的知道，程序需要我们输入，何况非程序员用户呢？
+
+![image-20231225075451181](./04-python-string.assets/image-20231225075451181.png)
+
+如何解决？——使用输入提示。
+
+`input()` 函数里面支持我们写入字符串进行提示。
+
+```python
+user_input = input('Enter your name:>>>')
+print("user input name:", user_input)
+
+# ---output---
+Enter your name:>>>bornforthis
+user input name: bornforthis
+```
+
+
 
 ```python
 user_input = input("please input your information: ")
@@ -1202,7 +1233,7 @@ In [14]: print(s)
 - 适合：数字「整数，浮点数」，字符串，布尔形
 - 不适合：列表，元组，字典，集合
 
-### 10.3.3 
+### 10.3.3
 
 ```python
 In [15]: s = eval(input('>>>'))

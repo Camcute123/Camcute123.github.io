@@ -185,13 +185,13 @@ list.insert(index, element)
 
 它的基本语法是
 
-```
+```python'
 list.insert(index, object)
 ```
 
 
 
-```
+```python
 numbers = [1, 2, 3, 5, 6]
 numbers.insert(3, 4)
 print(numbers)
@@ -205,18 +205,308 @@ print(numbers)
 
 ##  6. 列表长度
 
-
+获取列表长度，使用`len()`:
 
 ```python
 grade = [98, 99, 95, 80]
-print(grade[1:: 2])
+print(len(grade))
+
 #output
-[98, 95]
-grade = [98, 99, 95, 80]
-print(grade[:: -1])
-#output
-[80,95,99,98]
+4
 ```
+
+
+
+## 7. 修改列表中的元素
+
+![image-20231230083540506](./05-list.assets/image-20231230083540506.png)
+
+1. 单个元素修改
+
+```python
+grade = [98, 99, 100]
+print("before editing: ", grade)
+
+grade[0] = 97
+print("after editing: ", grade)
+#output
+before editing:  [98, 99, 100]
+after editing:  [97, 99, 100]
+```
+
+2. 多个元素修改
+
+```python
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 8, 10]
+print("before editing: ", numbers)
+
+numbers[1:5] = ["1", "2", "3", "4", "5"]
+print("after editing: ", numbers)
+
+#output
+before editing:  [1, 2, 3, 4, 5, 6, 7, 8, 8, 10]
+after editing:  [1, '1', '2', '3', '4', '5', 6, 7, 8, 8, 10]
+```
+
+```python
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print("before editing: ", numbers)
+
+numbers[1:5] = ["1", "2"]
+print("after editing: ", numbers)
+
+#output
+before editing:  [1, 2, 3, 4, 5, 6, 7, 9, 8, 10]
+after editing:  [1, '1', '2', 6, 7, 8, 9, 10]
+
+```
+
+3. 多个修改的对象也可以是字符串
+
+```python
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print("before editing: ", numbers)
+
+numbers[1:5] = "NICE TO MEET YOU"
+print("after editing: ", numbers)
+
+#output
+before editing:  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+after editing:  [1, 'N', 'I', 'C', 'E', ' ', 'T', 'O', ' ', 'M', 'E', 'E', 'T', ' ', 'Y', 'O', 'U', 6, 7, 8, 8, 10]
+
+```
+
+- 多个元素修改情况下，可以使用的对象：
+
+    - 列表
+
+    - 元组
+
+    - 集合
+
+    - 字符串
+
+    - 字典「放进去的是 key」
+
+    ```python
+    numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    print("before editing: ", numbers)
+    
+    numbers[1:5] = {'a':1, 'b':2}
+    print("after editing: ", numbers)
+    
+    #output
+    before editing:  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    after editing:  [1, 'a', 'b', 6, 7, 8, 9, 10]
+    ```
+
+- 多个元素修改的情况下，不可以的对象：
+
+    - 布尔型
+
+    ```python
+    numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    print("before editing: ", numbers)
+    
+    numbers[1:5] = True
+    print("after editing: ", numbers)
+    
+    #output
+    before editing:  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    Traceback (most recent call last):
+      File "/Users/wangruoyihan/PycharmProjects/pythonProject/python homework.py", line 103, in <module>
+        numbers[1:5] = True
+        ~~~~~~~^^^^^
+    TypeError: can only assign an iterable
+    ```
+
+    
+
+## 8. 向列表中添加元素
+
+### 8.1 添加单个元素「.append( )」
+
+![image-20231230085025936](./05-list.assets/image-20231230085025936.png)
+
+```python
+lst = [1, 2]
+print("before:", lst)
+
+lst.append(3)
+print("after: ", lst)
+
+#output
+before: [1, 2]
+after:  [1, 2, 3]
+
+numbers = [1, 2, 3]
+numbers.append([1, 2])
+print(numbers)
+
+#output
+[1, 2, 3, [1, 2]]
+```
+
+### 8.2 添加多个元素「`.extend()`」
+
+```python
+numbers = [1, 2, 3]
+numbers.extend([1, 2]) #也可以使用tuple
+print(numbers)
+
+#output
+[1, 2, 3, 1, 2]
+```
+
+## 9. 删除列表中的元素
+
+### 9.1 del
+
+del需要指定列表中要删除的单个元素或者多个元素。
+
+```python
+numbers = [1, 2, 3, 4]
+del numbers[0]
+print(numbers)
+
+#output
+[2, 3, 4]
+```
+
+如果不指定删除的元素，则删除整个变量。
+
+```python
+numbers = [1, 2, 3, 4]
+del numbers[]
+print(numbers)
+
+#output
+Traceback (most recent call last):
+  File "/Users/wangruoyihan/PycharmProjects/pythonProject/python homework.py", line 102, in <module>
+    print(numbers)
+          ^^^^^^^
+NameError: name 'numbers' is not defined
+```
+
+### 9.2 pop( )
+
+`pop()`函数默认删除列表中的最后一个元素，也可以传参数指定要删除的元素下标
+
+```python
+numbers = [1, 2, 3]
+numbers.pop()
+print(numbers)
+
+numbers.pop(0)
+print(numbers)
+
+#output
+[1, 2]
+[2]
+```
+
+### 9.3 remove( )
+
+`remove()`指定删除列表中某个元素，例如：`remove('hello')`则指定删除列表中的`‘hello’`元素
+
+```python
+numbers = [1, 2, 3, 4]
+numbers.remove(1)
+print(numbers)
+
+#output
+[2, 3, 4]
+```
+
+
+
+## 10.两个列表相加
+
+直接使用加号就可以
+
+```python
+numbers1 = [1, 2, 3]
+numbers2 = [4, 5, 6]
+print(numbers1 + numbers2)
+
+#output
+[1, 2, 3, 4, 5, 6]
+```
+
+
+
+## 11. 判断某个元素是否存在于列表里面「Value in Sequence」
+
+![image-20231230091110993](./05-list.assets/image-20231230091110993.png)
+
+::: code-tabs
+
+@tab Code1
+
+```python
+numbers = [1, 2, 3, 4]
+print(5 in numbers)
+print(1 in numbers)
+
+#output
+False
+True
+```
+
+@tab Code2
+
+```python
+inventory = ['钥匙', '毒药', '解药']
+print('解药' in inventory)
+print('迷药' in inventory)
+
+# ---output---
+True
+False
+```
+
+:::
+
+## 12. 获取列表中某个元素的重复次数「.count()」
+
+```python
+numbers = [1, 2, 3, 4, 2, 5, 7, 1, 3, 2]
+print(numbers.count(2))
+
+#output
+3
+```
+
+
+
+## 13. 获取列表中某个元素第一次出现的位置「.index()」
+
+- 用 **<span style="color:orange">列表.index(元素)</span>** 来获取
+
+```python
+numbers = [1, 2, 3]
+print(numbers.index(1)) #output 0
+```
+
+
+
+## 14. 列表排序
+
+### 14.1 sort (reverse = False)
+
+`list.sort()`使列表内的元素从小到大排序，直接修改列表本身。如果里面指定`reverse = True`则列表降序排列
+
+```python
+numbers = [2, 3, 4, 1, 6, 4, 8, 9]
+numbers.sort()
+print(numbers) 
+#[1, 2, 3, 4, 4, 6, 8, 9]
+numbers = [2, 3, 4, 1, 6, 4, 8, 9]
+numbers.sort(reverse=True)
+print(numbers) 
+```
+
+
 
 
 

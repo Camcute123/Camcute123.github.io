@@ -174,13 +174,13 @@ reminder container
 
 :::
 
-::: warning
+::: caution
 
-warrning container
+warning container
 
 :::
 
-::: danger
+::: caution
 
 dager container
 
@@ -232,7 +232,7 @@ const a = 1;
 
 :::
 
-::: danger title
+::: caution title
 
 a danger container with codes and link
 
@@ -264,7 +264,7 @@ const a = 1;
 ::: warning self-defined warning
 :::
 
-::: danger self-defined danger
+::: caution self-defined danger
 :::
 
 ::::

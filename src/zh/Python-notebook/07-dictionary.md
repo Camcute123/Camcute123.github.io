@@ -191,5 +191,250 @@ grade = {'李雷': 98, '韩梅梅': 99}
 print(grade['李雷']) #98
 ```
 
+### 5.2 上面的提取方法存在的问题
+
+当提取不存在的key时，会报错
+
+```python
+grade = {'李雷': 98, '韩梅梅': 99}
+print(grade['哈哈哈'])
+#output
+Traceback (most recent call last):
+  File "/Users/wangruoyihan/PycharmProjects/pythonProject/python homework.py", line 101, in <module>
+    print(grade['哈哈哈'])
+          ~~~~~^^^^^^^
+KeyError: '哈哈哈'
+```
+
+就像我们查询电话薄时没找到
+
+![image-20240104073916229](./07-dictionary.assets/image-20240104073916229.png)
+
+
+
+### 5.3 使用 .get() 解决
+
+当使用 `get` 方法时，需要提供一个键（key），方法会返回与该键关联的值。如果该键在字典中不存在，`get` 方法将返回 `None`，或者你可以指定一个默认值，如果键不存在，则返回这个默认值。
+
+这是 `get` 方法的基本语法：
+
+```python
+value = dictionary.get(key, default_value)
+```
+
+- `key`：你想要检索的键。
+- `default_value`：（可选）如果键不存在时返回的值。如果未提供此参数，默认值为 `None`。
+
+下面是一个使用 `get` 方法的例子：
+
+```python
+my_dict = {'name': 'Cindy', 'age': 17}
+#使用get访问一个存在的键
+print(my_dict.get('name'))
+
+#使用get访问一个不存在的键，并提供默认值
+#不提供，返回none
+print(my_dict.get('gender', 'Not Specified'))
+#---output---
+Cindy
+Not Specified
+```
+
+在第一个 `get` 调用中，我们访问了键 `'name'`，它在字典中存在，因此返回了对应的值 `'Alice'`。在第二个调用中，我们试图访问键 `'gender'`，它在字典中不存在，因此返回了我们指定的默认值 `'Not Specified'`。
+
+
+
+## 6. 更新字典的数据
+
+![image-20240104074620020](./07-dictionary.assets/image-20240104074620020.png)
+
+```python
+grade = {'lilei': '98', 'hanmeimei': '99'}
+grade['hanmeimei'] = 100
+print(grade)
+grade['madongmei'] = '95'
+print(grade)
+#--output--
+{'lilei': '98', 'hanmeimei': 100}
+{'lilei': '98', 'hanmeimei': 100, 'madongmei': '95'}
+```
+
+字典修改的原则–有责改之，无则加勉
+
+
+
+## 7. 字典的删除
+
+![image-20240104074929710](./07-dictionary.assets/image-20240104074929710.png)
+
+```python
+grade = {'lilei': '98', 'hanmeimei': '99', 'madongmei': '95'}
+print(grade)
+```
+
+::: code-tabs
+
+@tab code1
+
+```python
+grade = {'lilei': '98', 'hanmeimei': '99', 'madongmei': '95'}
+del grade['lilei']
+print(grade) #delete lilei
+
+#---output---
+{'hanmeimei': '99', 'madongmei': '95'}
+```
+
+@tab code2
+
+```python
+grade = {'lilei': '98', 'hanmeimei': '99', 'madongmei': '95'}
+del grade ['lilei']
+grade.clear()
+print(grade) #清空字典
+
+#---output---
+{}
+```
+
+@tab code3
+
+```python
+grade = {'lilei': '98', 'hanmeimei': '99', 'madongmei': '95'}
+del grade
+print(grade) #删除整个变量，变量不存在了
+
+#---output---
+Traceback (most recent call last):
+  File "/Users/wangruoyihan/PycharmProjects/pythonProject/python homework.py", line 102, in <module>
+    print(grade)
+          ^^^^^
+NameError: name 'grade' is not defined
+
+```
+
+:::
+
+## 8. 字典结构嵌套字典
+
+嵌套：将一系列字典存储在列表中，或将列表作为值存在字典中。
+
+- 字典列表
+- 在字典中存储列表
+- 在字典中存储字典
+
+### 8.1 字典列表
+
+::: code-tabs
+
+@tab code1
+
+```python
+student1 = {'name': '李雷', 'age': 18, 'grade': 98}
+student2 = {'name': '韩梅梅', 'age': 18, 'grade': 99}
+student3 = {'name': '马冬梅', 'age': 18, 'grade': 95}
+student = [student1, student2, student3]
+print(student[2]['grade']
+                 #95
+```
+
+@tab code2
+
+```python
+student1 = {'name': '李雷', 'age': 18, 'grade': 98}
+student2 = {'name': '韩梅梅', 'age': 18, 'grade': 99}
+student3 = {'name': '马冬梅', 'age': 18, 'grade': 95}
+student = [student1, student2, student3]
+print(student[2].get('grade'))
+#95
+```
+
+:::
+
+### 8.2 在字典中存储列表
+
+```python
+favourite_class = {
+    'Kim' : ['数学', '英语'],
+    'Amy' : ['语文'],
+    'Lisa' : ['计算机', '物理', '数学'],
+}
+print(favourite_class['Lisa'][2])
+print(favourite_class.get('Lisa')[2])
+#数学
+```
+
+### 8.3 在字典中存储字典
+
+```python
+class1 = {
+    'Amy': {'成绩': '98', '实验班': True},
+    'Kim': {'成绩': '95', '实验班': False},
+}
+print(class1['Kim']['实验班'])
+#False
+```
+
+
+
+## 9. 字典常见方法
+
+### 9.1 .pop(key)
+
+删除特定的键值对
+
+```python
+student = {'name': 'Amy','成绩': '98', '实验班': True}
+student.pop('实验班')
+print(student)
+
+#{'name': 'Amy', '成绩': '98'}
+```
+
+### 9.2 .Keys()
+
+获取字典中所有的键
+
+```python
+student = {'name': 'Amy','成绩': '98', '实验班': True}
+print(student.keys())
+print(list(student.keys()))
+
+#---output---
+dict_keys(['name', '成绩', '实验班'])
+['name', '成绩', '实验班']
+```
+
+### 9.3 .values()
+
+获取字典所有的values
+
+```python
+student = {'name': 'Amy','成绩': '98', '实验班': True}
+print(student.values())
+print(list(student.values()))
+
+#---output---
+dict_values(['Amy', '98', True])
+['Amy', '98', True]
+```
+
+### 9.4 .items()
+
+获取字典的键值对
+
+```python
+student = {'name': 'Amy','成绩': '98', '实验班': True}
+print(student.items())
+print(list(student.items()))
+#---output---
+dict_items([('name', 'Amy'), ('成绩', '98'), ('实验班', True)])
+[('name', 'Amy'), ('成绩', '98'), ('实验班', True)]
+```
+
+### 9.5 in
+
+判断key是否存在在字典中
+
 
 

@@ -434,7 +434,31 @@ dict_items([('name', 'Amy'), ('成绩', '98'), ('实验班', True)])
 
 ### 9.5 in
 
-判断key是否存在在字典中
+1. 默认情况是判断key是否在字典中
+
+```python
+dict1 = {'name': '李雷', 'age': 19}
+print('name' in dict1)
+#True
+```
+
+2. 使用keys实现纯粹判断
+
+```python
+dict1 = {'name': '李雷', 'age': 19}
+print('name' in dict1.keys())
+#True
+```
+
+3. 使用values实现纯粹判断
+
+```python
+dict1 = {'name': '李雷', 'age': 19}
+print('name' in dict1.values())
+#Fakse
+```
+
+
 
 
 

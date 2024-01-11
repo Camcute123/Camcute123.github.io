@@ -40,6 +40,16 @@ while not user_answer_correct:
         print("Wrong inout, please input F or M")
 ```
 
+```python
+i = 1
+while i < 10:  # 10!< 10 所以边界是10
+    print(i)
+    i = i + 1 # 10 = 9 + 1
+    #所以最后会print 1 到 9
+```
+
+
+
 ## 小试牛🔪
 
 计算一个范围内奇数和偶数的和
@@ -147,6 +157,8 @@ if guesses_left == 0:
     print(f"很遗憾，你没有猜中。正确答案是 {target_number}。")
 ```
 
+
+
 ## 作业📒
 
 ### 1.
@@ -169,9 +181,33 @@ if guesses_left == 0:
 这个输出是因为 $1^2 + 2^2 + 3^2 + 4^2 + 5^2 = 55$。
 
 ```python
+number = int(input("Please enter an integer for calculation: "))
+n = 1
+square_number = 0
+while n <= number:
+    square_number += n**2
+    n += 1
+print(square_number)
+#--output--
+5
+55
+
 ```
 
-### 2. 
+```python
+number = int(input("Please enter an integer for calculation: "))
+n = 1
+square_number = 0
+while n <= number:
+    square = n ** 2   #如果也用square_number 新的值会覆盖掉旧的值
+    square_number += square
+    n += 1
+print(square_number)
+```
+
+
+
+### 2.
 
 **题目：** 编写一个Python程序，使用`while`循环来实现一个简单的数字猜谜游戏。程序将随机选择一个介于1到100之间的数字，然后用户有机会猜测这个数字。每次用户猜测后，程序都会告诉用户猜测是太高、太低还是正确。如果用户猜对了，程序结束；否则，用户可以继续猜测，直到猜对为止。
 
@@ -192,5 +228,33 @@ if guesses_left == 0:
 ```
 
 ```python
+random_number = random.randint(1,101)
+print("I have a number between 1 and 100, try to guess it.")
+count = 1
+while True:
+    user_number = int(input(("Please enter your guess: ")))
+    if user_number > random_number:
+        print("Too large! Try again.")
+    elif user_number < random_number:
+        print("Too small! Try again.")
+    else:
+        print(f"congratulation! You use {count} times getting the right answer.")
+    count += 1
+#---output---
+I have a number between 1 and 100, try to guess it.
+Please enter your guess: 50
+Too large! Try again.
+Please enter your guess: 25
+Too large! Try again.
+Please enter your guess: 12
+Too large! Try again.
+Please enter your guess: 6
+Too large! Try again.
+Please enter your guess: 3
+Too large! Try again.
+Please enter your guess: 2
+Too large! Try again.
+Please enter your guess: 1
+congratulation! You use 7 times getting the right answer.
 ```
 

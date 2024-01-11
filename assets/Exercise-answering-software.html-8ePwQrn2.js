@@ -1,0 +1,23 @@
+import{_ as n}from"./plugin-vue_export-helper-x3n3nnut.js";import{o as s,c as a,a as t}from"./app-iXnhtsKv.js";const p="/assets/fb736dc40ee235cf8565a7d6ed222fd3-wd5Edpsy.png",e={},o=t('<hr><p>通过一句一句的提问获取用户的信息，生成一个格式化的简历。</p><p><strong>如例：</strong></p><figure><img src="'+p+`" alt="fb736dc40ee235cf8565a7d6ed222fd3.png" tabindex="0" loading="lazy"><figcaption>fb736dc40ee235cf8565a7d6ed222fd3.png</figcaption></figure><div class="language-python line-numbers-mode" data-ext="py"><pre class="language-python"><code>name <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&quot;请输入你的姓名： &quot;</span><span class="token punctuation">)</span>
+gender <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&quot;请输入你的性别： &quot;</span><span class="token punctuation">)</span>
+age <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&quot;请输入你的年龄： &quot;</span><span class="token punctuation">)</span>
+school <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&quot;请输入你的学校： &quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;is processing......&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;    简历     &quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;姓名： </span><span class="token interpolation"><span class="token punctuation">{</span>name<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;性别： </span><span class="token interpolation"><span class="token punctuation">{</span>gender<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;年龄： </span><span class="token interpolation"><span class="token punctuation">{</span>age<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;就读学校： </span><span class="token interpolation"><span class="token punctuation">{</span>school<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+
+<span class="token comment">#---output---</span>
+请输入你的姓名： Cindy
+请输入你的性别： female
+请输入你的年龄： <span class="token number">17</span>
+请输入你的学校： Cambridge
+<span class="token keyword">is</span> processing<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    简历     
+姓名： Cindy
+性别： female
+年龄： <span class="token number">17</span>
+就读学校： Cambridge
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,5),i=[o];function c(l,u){return s(),a("div",null,i)}const k=n(e,[["render",c],["__file","Exercise-answering-software.html.vue"]]);export{k as default};

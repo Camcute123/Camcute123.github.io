@@ -124,3 +124,19 @@ while True:
 
 
 ![image-20240111083259571](./12-for-loop.assets/image-20240111083259571.png)
+
+```python
+gender = input("请输入您的性别（F/M）：")
+age = int(input("请输入您的年龄： "))
+if gender == 'F':
+    if age > 15:
+        print("你今年会考上清华并且找到男朋友")
+    else:
+        print("你会考上清华，好好学习！")
+if gender == 'M':
+    if age > 15:
+        print("你今年会考上清华并且找到女朋友")
+    else:
+        print("你会考上清华，好好学习！")
+```
+

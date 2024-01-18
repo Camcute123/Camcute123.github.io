@@ -1,5 +1,25 @@
 ---
-
+title: Python Exercises
+date: 2024-1-14 11:23:36
+author: Cindy
+isOriginal: true
+category: 
+    - python practice
+tag:
+    - practice
+    - python
+sticky: false
+star: false
+article: true
+timeline: true
+navbar: true
+sidebarIcon: true
+headerDepth: 5
+comment: true
+lastUpdated: true
+editLink: true
+backToTop: true
+toc: true
 ---
 
 ## Question 01: Find the Missing Number
@@ -41,6 +61,8 @@ the number 3 is missing.
 
 
 
+
+
 ------
 
 ## Question 03: Shallow Copy Verification
@@ -50,6 +72,8 @@ Demonstrate shallow copying of a list and show how it differs from a deep copy.
 浅拷贝：复制一个列表（但不会创建一个新的，也就是说id是和所复制的列表完全相同的）
 
 所存在的问题时，当一个列表中嵌套了另一个列表，就无法实现复制。
+
+
 
 
 
@@ -90,7 +114,17 @@ Please enter the delimiter you wish to use:  *
 ```
 
 ```python
+user_string = input("Please enter a list of element, separated by commas: ").split(',')
+user_delimiter = input("Please enter the delimiter you wish to use: ")
+final_string = user_delimiter.join(user_string)
+print(f"The final string you assigned is: {final_string}")
+
+#Please enter a list of element, separated by commas: Kim,Amy,Cindy
+Please enter the delimiter you wish to use: ^_^
+The final string you assigned is: Kim^_^Amy^_^Cindy
 ```
+
+Join 用特定间隔使字符串分隔
 
 
 

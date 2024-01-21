@@ -43,6 +43,7 @@ The missing number is 3.
 ```python
 user_number = (input("Please enter a list of continuous numbers: "))
 lst_number = user_number.split(",")
+## 
 lst_number = [int(num) for num in lst_number]
 print(lst_number)
 total_number = []
@@ -61,6 +62,20 @@ the number 3 is missing.
 
 
 
+```python
+# 用户输入的数字序列
+user_input = input('Please enter a series of numbers separated by commas:').replace(' ', '').split(',')
+# 将字符串转换为整数列表
+numbers_list = list(map(int, user_input))
+# 从列表中提取旋转次数和剩余的数字
+# *rotating_elements, rotation_count = numbers
+rotating_elements, rotation_count = numbers_list[:-1], numbers_list[-1]
+# 执行左旋转操作
+rotated_list = rotating_elements[rotation_count:] + rotating_elements[:rotation_count]
+# 输出结果
+print(f"List {rotating_elements} after {rotation_count} left rotations: {rotated_list}")
+```
+
 
 
 ------
@@ -72,6 +87,29 @@ Demonstrate shallow copying of a list and show how it differs from a deep copy.
 浅拷贝：复制一个列表（但不会创建一个新的，也就是说id是和所复制的列表完全相同的）
 
 所存在的问题时，当一个列表中嵌套了另一个列表，就无法实现复制。
+
+```python
+# Demonstrating shallow copying and deep copying in Python
+
+# Original list
+original_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+# Shallow copy of the list
+shallow_copy = original_list.copy()
+
+# Deep copy of the list
+import copy
+deep_copy = copy.deepcopy(original_list)
+
+# Altering the original list to show the difference
+original_list[0][0] = 'X'
+
+# Displaying the original list, shallow copy, and deep copy to illustrate the differences
+print("Original:", original_list)
+print("Shallow Copy:", shallow_copy)
+print("Deep Copy:", deep_copy)
+
+```
 
 
 
@@ -148,6 +186,10 @@ Enter a list of items separated by commas: 1,2, 3, 2, 1
 Is the entered list symmetric: True
 ```
 
+::: code-tabs
+
+@tab solution with for-loop
+
 ```python
 user_message = input("Please enter a list of element, separated by commas: ")
 lst_number = user_message.split(",")
@@ -159,6 +201,16 @@ for i in range(len(lst_number)-1):
         print("False")
         break
 ```
+
+@tab only using list
+
+```python
+list_numbers = (input("Please in put a series of numbers: ")).split(',')
+symmetry = list_numbers == list_numbers[::-1]
+print(f"If the list is symmetry: {symmetry}")
+```
+
+
 
 
 
